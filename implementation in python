@@ -1,0 +1,18 @@
+class GraphNode:
+    def __init__(self,data):
+        self.data=data
+        self.adjacencylist=[]
+        self.predecessor=None
+        self.visited=False
+class Breadthfirstsearch:
+    def __init__(self,startnode):
+        queue=[]
+        queue.append(startnode)
+        startnode.visited=True 
+        while queue is not None :
+            actualnode=queue.pop(0)
+            actualnode.visited=True 
+            for n in actualnode.adjacencylist:
+                   if n.visited is not True:
+                       n.visited=True 
+                       queue.append(n)
